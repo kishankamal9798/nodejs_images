@@ -1,0 +1,17 @@
+<div>
+    <h2>Upload Image</h2>
+    <div>
+        <input type="file" class="btn btn-primary" accept=".jpg,.jpeg,.png,.gif" @change="uploadDoc($event)" multiple />
+    </div><br>
+    <!-- <div style="color: brown;">Select mininum 4 images </div> -->
+
+    <!-- <br> <div v-if="validationMsg">Please Upload mininum 4 files </div> -->
+<div>
+    <div class="gallery" v-for="(image,i ) in imageArr">
+        <a target="_blank" >
+            <div :src="loadImage(image.path, i)" alt="Card image cap" :id="'imageEl'+i"></div>
+        </a>
+        <div class="desc">{{'Image' + ' '+(i+1)}}</div>
+    </div>
+</div>
+</div>
